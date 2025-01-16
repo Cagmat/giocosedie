@@ -4,7 +4,7 @@ class Partecipante extends Thread
 
 {
 	Posto sedie[];
-
+        String messaggio;
 	public Partecipante(Posto sedie[]) {
 
 		this.sedie = sedie;
@@ -18,16 +18,25 @@ class Partecipante extends Thread
 
 			for (int i = 0; i < sedie.length; i++) {
 				if (sedie[i].occupa()) {
-					System.out.println("Sono il Thread " + this.getName()
-							+ ". Sono riuscito a sedermi sul posto " + i);
+                                    messaggio += "Sono il Thread " + this.getName()
+							+ ". Sono riuscito a sedermi sul posto " + i ;
+                                    
+					System.out.println(messaggio);
 					return;
 				}
 			}
-			System.out.println("Sono il Thread " + this.getName()
-					+ ". Ho perso :((((");
+                        messaggio += "Sono il Thread " + this.getName()
+					+ ". Ho perso :((((";
+			System.out.println(messaggio);
 
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
-	}
+                
+               
+            Scrittore s= new Scrittore("file", messaggio);
+            s.scrivi();
+        
+        }
+        
 }
