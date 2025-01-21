@@ -1,10 +1,16 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package giocosedie;
+
 
 class Partecipante extends Thread
 
 {
 	Posto sedie[];
-        String messaggio;
+        TestGiocoSedie testGiocoSedie;
+
 	public Partecipante(Posto sedie[]) {
 
 		this.sedie = sedie;
@@ -16,27 +22,23 @@ class Partecipante extends Thread
 		try {
 			sleep((int) (Math.random() * 1000));
 
+                        testGiocoSedie= new TestGiocoSedie();
+                        testGiocoSedie.scrivi("", false);
+
 			for (int i = 0; i < sedie.length; i++) {
 				if (sedie[i].occupa()) {
-                                    messaggio += "Sono il Thread " + this.getName()
-							+ ". Sono riuscito a sedermi sul posto " + i ;
-                                    
-					System.out.println(messaggio);
-					return;
+                                    String messaggio= "Sono il Thread " + this.getName()
+							+ ". Sono riuscito a sedermi sul posto " + i;
+                                    System.out.println(messaggio);
+                                    testGiocoSedie.scrivi(messaggio, true);
+                                    return;
 				}
 			}
-                        messaggio += "Sono il Thread " + this.getName()
-					+ ". Ho perso :((((";
-			System.out.println(messaggio);
+			System.out.println("Sono il Thread " + this.getName()
+					+ ". Ho perso :((((");
 
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
-                
-               
-            Scrittore s= new Scrittore("file", messaggio);
-            s.scrivi();
-        
-        }
-        
+	}
 }
