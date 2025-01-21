@@ -2,7 +2,6 @@
 
 <p align="center" style="font-family: monospace">Matteo Cagliesi <a href="https://github.com/mcagliesi">@mcagliesi</a></p>
 <p align="center" style="font-family: monospace">Corso TPSIT <a href="https://www.avoltapg.edu.it/">ITTS A. Volta (PG)</a></p>
-<p align="center" style="font-family: monospace">Template del file README.md ispirato da <a href="https://github.com/matbagnoletti">@matbagnoletti</a></p>
 
 ## Descrizione
 Applicazione Java per simulare il gioco delle sedie, in cui i giocatori sono più delle sedie disponibili.
