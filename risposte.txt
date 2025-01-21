@@ -1,6 +1,20 @@
-3) Le classi che vengono istanziate esplicitamente sono per esempio Posto, Display e Partecipante, le classi che vengono istanzite anonimamente sono per esempio il FileWriter, queste istanze si
-   chiamano così perchè non sono associate ad un nome.
- Le classi che lavorano in concorrenza sono tutte le istanze di Partecipante e di Posto, che segnalano su quale posto si sono seduti, se ci sono riusciti.
- I metodi dei Thread che sono stati utilizzati sono sleep, notify
- La classe monitor è la classe Posto, questa si differenzia dalle altre perchè contiene metodi synchronized, ovvero che gestiscono la concorrenza degli altri thread alla stessa risorsa comune
- Nell' applicazione vengono gestite le eccezioni controllate riguardanti scrittura nel file del risultato della partita
+ 3.1) Quali oggetti vengono istanziati? Quali di questi hanno una istanza esplicita?
+Nell'applicazione vengono istanziati diversi oggetti. Le istanze esplicite includono Posto, Display e Partecipante.
+
+ 3.2) Esistono classi anonime? Definisci il concetto di classe anonima.
+Sì, nel codice sono presenti classi anonime, per esempio la classe FileWriter. Una classe anonima è una classe senza nome, definita e istanziata in un'unica espressione, utilizzata per implementare interfacce o estendere classi senza creare una classe separata.
+
+ 3.3) Quali sono le classi che lavorano in concorrenza? Quanti sono i thread in memoria?
+Le classi che lavorano in concorrenza sono Partecipante e Posto. Il numero di thread in memoria corrisponde al numero di istanze della classe Partecipante create, oltre al thread principale.
+
+ 3.4) Quali sono i metodi della classe Thread che vengono usati?
+I metodi utilizzati della classe `Thread` includono sleep() e notify().
+
+3.5) Qual è la classe Monitor? Perché e a cosa serve?
+La classe Monitor è rappresentata dalla classe Posto, che controlla l'accesso ai posti nel gioco, garantendo che solo un partecipante possa occupare un posto alla volta.
+
+3.6) Quali eccezioni sono usate nell'applicazione? Di che tipo sono?
+Nell'applicazione vengono gestite eccezioni controllate, in particolare IOException, sollevata durante le operazioni di input/output.
+
+3.7) Come si gestiscono le eccezioni? Individua le parti di codice interessate.
+Le eccezioni vengono gestite usando blocchi try-catch, in particolare nelle operazioni di scrittura su file.
