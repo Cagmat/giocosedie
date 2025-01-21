@@ -1,0 +1,6 @@
+3) Le classi che vengono istanziate esplicitamente sono per esempio Posto, Display e Partecipante, le classi che vengono istanzite anonimamente sono per esempio il FileWriter, queste istanze si
+   chiamano così perchè non sono associate ad un nome.
+ Le classi che lavorano in concorrenza sono tutte le istanze di Partecipante e di Posto, che segnalano su quale posto si sono seduti, se ci sono riusciti.
+ I metodi dei Thread che sono stati utilizzati sono sleep, notify
+ La classe monitor è la classe Posto, questa si differenzia dalle altre perchè contiene metodi synchronized, ovvero che gestiscono la concorrenza degli altri thread alla stessa risorsa comune
+ Nell' applicazione vengono gestite le eccezioni controllate riguardanti scrittura nel file del risultato della partita
