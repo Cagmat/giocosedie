@@ -7,7 +7,7 @@
       <Entity type="Class">
         <Name>Display</Name>
         <Access>Public</Access>
-        <Location left="693" top="318" />
+        <Location left="841" top="318" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Posto[] sedie</Member>
@@ -19,7 +19,7 @@
       <Entity type="Class">
         <Name>Partecipanti</Name>
         <Access>Public</Access>
-        <Location left="435" top="318" />
+        <Location left="581" top="318" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Posto[] sedie</Member>
@@ -49,39 +49,51 @@
         <Member type="Method">public void run()</Member>
         <Modifier>None</Modifier>
       </Entity>
+      <Entity type="Class">
+        <Name>Scrittore</Name>
+        <Access>Public</Access>
+        <Location left="344" top="318" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String nomeFile</Member>
+        <Member type="Field">private String messaggio</Member>
+        <Member type="Method">public void run()</Member>
+        <Member type="Constructor">public Scrittore(String nomeFile, String messaggio)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
     </Entities>
     <Relationships>
       <Relationship type="Association" first="1" second="3">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="0" second="3">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="2" second="0">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
       </Relationship>
       <Relationship type="Association" first="2" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="4" second="3">
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
-        <AssociationType>Aggregation</AssociationType>
+        <AssociationType>Association</AssociationType>
       </Relationship>
     </Relationships>
   </ProjectItem>
