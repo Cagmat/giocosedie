@@ -10,12 +10,13 @@ import java.util.logging.Logger;
 public class TestGiocoSedie {
     private final static int NUMSEDIE = 15;
     private static Logger logger = Logger.getLogger("GiocoSedie.TestGiocoSedie");
-    String nomeFile= "Veschini_file.txt";
+    String nomeFile= "file.txt";
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+	
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Inserisci il numero di partecipanti: ");
@@ -44,62 +45,6 @@ public class TestGiocoSedie {
 
         scanner.close();
 	}
-
-    public void scrivi(){
-        BufferedWriter br=null;
-        
-        try {
-            //1) apro il file
-            br = new BufferedWriter(
-                    new FileWriter(nomeFile));
-            //2) scrivo nel buffer
-            br.write("File in output");
-            br.write("\n\r");
-            //3) svuoto il buffer e salvo nel file i dati
-            br.flush();         
-        } catch (IOException ex) {
-            //Logger.getLogger(Scrittore.class.getName()).log(Level.SEVERE, null, ex);
-		System.err.println("Stampa l'ID");
-        }
-        finally{
-            if (br!=null)
-                try {
-                    //4)chiudo lo stream in uscita
-                    br.close();
-            } catch (IOException ex) {
-                //Logger.getLogger(Scrittore.class.getName()).log(Level.SEVERE, null, ex);
-			System.err.println("Stampa");
-            }
-                
-        }
-    }
-    
-    public void scrivi(String messaggio, boolean append){
-        BufferedWriter br=null;
-        
-        try {
-            //1) apro il file
-            br = new BufferedWriter(
-                    new FileWriter(nomeFile,append));
-            //2) scrivo nel buffer
-            br.write(messaggio);
-            br.write("\n\r");
-            //3) svuoto il buffer e salvo nel file i dati
-            br.flush();         
-        } catch (IOException ex) {
-            //Logger.getLogger(Scrittore.class.getName()).log(Level.SEVERE, null, ex);
-		System.err.println(ex.getMessage());
-        }
-        finally{
-            if (br!=null)
-                try {
-                    //4)chiudo lo stream in uscita
-                    br.close();
-            } catch (IOException ex) {
-                //Logger.getLogger(Scrittore.class.getName()).log(Level.SEVERE, null, ex);
-			System.err.println(ex.getMessage());
-            }
-                
-        }
+	
     }
 }
